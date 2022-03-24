@@ -1,0 +1,36 @@
+#!/usr/bin/with-contenv bash
+
+echo '------------------'
+echo '|   theme.park   |'
+echo '------------------'
+
+# Display variables for troubleshooting 
+echo -e "Variables set:\\n\
+PUID=${PUID}\\n\
+PGID=${PGID}\\n\
+TZ=${TZ}\\n\
+TP_SCHEME=${TP_SCHEME}\\n\
+TP_DOMAIN=${TP_DOMAIN}\\n"
+
+if [[ -z ${TP_DOMAIN} ]]; then
+    echo 'No domain set, defaulting to $http_host'
+    TP_DOMAIN='$http_host'
+fi
+
+sed -i "s/TP_DOMAIN;/${TP_DOMAIN}; /g" /defaults/default
+cp /defaults/default /config/nginx/site-confs
+
+# make our folders and links
+mkdir -p \
+    /config/www/{css,resources}
+
+# copy theme files
+cp -R /app/themepark/css /config/www
+cp -R /app/themepark/resources /config/www
+cp /app/themepark/index.html /config/www
+cp /app/themepark/themes.py /config/www
+cp /app/themepark/CNAME /config/www
+
+# permissions
+chown -R abc:abc \
+    /config

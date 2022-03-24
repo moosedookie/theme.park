@@ -1,9 +1,9 @@
 :root {
   --main-bg-color: linear-gradient(45deg, #fb3f62 0%, #204c80 37%, #004249 97%) center center/cover no-repeat fixed;
 
-  --modal-bg-color: radial-gradient(circle, #204c80 0%, #000 100%) center center/cover no-repeat fixed;
-  --modal-header-color: radial-gradient(circle, #204c80 0%, #000 100%) center center/cover no-repeat fixed;
-  --modal-footer-color: radial-gradient(circle, #204c80 0%, #000 100%) center center/cover no-repeat fixed;
+  --modal-bg-color: linear-gradient(-45deg, #204c80 0%, #000 100%) center center/cover no-repeat fixed;
+  --modal-header-color: linear-gradient(-45deg, #204c80 0%, #000 100%) center center/cover no-repeat fixed;
+  --modal-footer-color: linear-gradient(-45deg, #204c80 0%, #000 100%) center center/cover no-repeat fixed;
 
   --drop-down-menu-bg: #204c80;
 
@@ -26,5 +26,6 @@
   --plex-poster-unwatched: #fb3f62;
   --petio-spinner: invert(29%) sepia(87%) saturate(2199%) hue-rotate(331deg) brightness(115%) contrast(97%); /* Made with https://codepen.io/jsm91/embed/ZEEawyZ */
   --gitea-color-primary-dark-4: 251, 63, 98;
+  --overseerr-gradient: linear-gradient(45deg, rgb(251, 63, 98,1) 0%, rgb(32, 76, 128,.95) 37%, rgb(0, 66, 73,.9) 97%) center center/cover no-repeat fixed;
   }
 
